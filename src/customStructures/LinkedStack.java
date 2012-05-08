@@ -1,5 +1,7 @@
 package customStructures;
 
+import java.util.EmptyStackException;
+
 public class LinkedStack<T> implements IStack<T>
 {
     private class Node<T>
@@ -9,16 +11,12 @@ public class LinkedStack<T> implements IStack<T>
     }
     
     private Node<T> head;
+    private int size;
     
     public LinkedStack()
     {
         head = null;
-    }
-    
-    public LinkedStack(T element)
-    {
-        head = new Node<T>();
-        head.element = element;
+        size = 0;
     }
     
     @Override
@@ -27,34 +25,45 @@ public class LinkedStack<T> implements IStack<T>
         Node<T> n = new Node<T>();
         n.element = element;
         
+        if(head != null)
+            n.previous = head;
+        
+        head = n;
+        size++;
     }
 
     @Override
     public T pop()
     {
-        // TODO Auto-generated method stub
-        return null;
+        if(isEmpty())
+            throw new EmptyStackException();
+        
+        T obj = head.element;
+        head = head.previous;
+        
+        size--;
+        return obj;
     }
 
     @Override
     public T peek()
     {
-        // TODO Auto-generated method stub
-        return null;
+        if(isEmpty())
+            throw new EmptyStackException();
+        
+        return head.element;
     }
 
     @Override
     public boolean isEmpty()
     {
-        // TODO Auto-generated method stub
-        return false;
+        return (size == 0);
     }
 
     @Override
     public int size()
     {
-        // TODO Auto-generated method stub
-        return 0;
+        return size;
     }
 
 }
