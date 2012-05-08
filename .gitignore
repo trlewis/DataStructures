@@ -1,0 +1,7 @@
+# this SHOULD be all of the eclipse files i don't care about and the binary builds
+# of the classes... hopefully.
+# 
+*.class
+.classpath
+.project
+.settings
