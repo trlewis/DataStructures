@@ -11,11 +11,7 @@ import org.junit.Test;
 public class testLinkedStack
 {
 
-//    @Test
-//    public void test()
-//    {
-//        fail("Not yet implemented");
-//    }
+
     
     @Test
     public void testEmpty()

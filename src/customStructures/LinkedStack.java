@@ -2,27 +2,46 @@ package customStructures;
 
 import java.util.EmptyStackException;
 
+/**
+ * This class implements a the stack interface using a linked 
+ * list data structure.
+ * 
+ * @author Travis Lewis
+ * @version 8 May 2012
+ * 
+ * @param <T> The type of object the stack is to store.
+ */
 public class LinkedStack<T> implements IStack<T>
 {
-    private class Node<T>
+    /**
+     * @author Travis Lewis
+     * @version 8 May 2012
+     * 
+     * This private class handles the storage of the elements in the stack.
+     */
+    private class Node
     {
         T element;
-        Node<T> previous;
+        Node previous;
     }
     
-    private Node<T> head;
+    private Node head;
     private int size;
     
+    /**
+     * Creates a new, empty LinkedStack structure.
+     */
     public LinkedStack()
     {
         head = null;
         size = 0;
     }
     
+    /** {@inheritDoc} */
     @Override
     public void push(T element)
     {
-        Node<T> n = new Node<T>();
+        Node n = new Node();
         n.element = element;
         
         if(head != null)
@@ -32,6 +51,7 @@ public class LinkedStack<T> implements IStack<T>
         size++;
     }
 
+    /** {@inheritDoc} */
     @Override
     public T pop()
     {
@@ -45,6 +65,7 @@ public class LinkedStack<T> implements IStack<T>
         return obj;
     }
 
+    /** {@inheritDoc} */
     @Override
     public T peek()
     {
@@ -54,12 +75,14 @@ public class LinkedStack<T> implements IStack<T>
         return head.element;
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean isEmpty()
     {
         return (size == 0);
     }
 
+    /** {@inheritDoc} */
     @Override
     public int size()
     {

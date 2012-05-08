@@ -1,10 +1,10 @@
 package customStructures;
 
 /**
+ * This interface provides the basic operands needed by a stack object.
+ * 
  * @author Travis Lewis
  * @version 8 May 2012
- * 
- * This interface provides the basic operands needed by a stack object.
  *
  * @param <T> The Data type to be stored
  */
