@@ -10,9 +10,7 @@ import org.junit.Test;
 
 public class testLinkedStack
 {
-
-
-    
+    /** Testing to see if the isEmpty() method works properly. */
     @Test
     public void testEmpty()
     {
@@ -24,6 +22,7 @@ public class testLinkedStack
         assertTrue(stack.isEmpty());
     }
 
+    /** Checks if the stack works in the proper order. */
     @Test
     public void testOrder()
     {
@@ -39,6 +38,8 @@ public class testLinkedStack
         assertEquals("Order", (Integer)0, stack.pop());
     }
     
+    /** Checks to see if the stack throws an exception when trying
+     * to pop an element off an empty stack. */
     @Test(expected=EmptyStackException.class)
     public void testEmptyStackException()
     {
@@ -46,6 +47,7 @@ public class testLinkedStack
         stack.pop();
     }
     
+    /** Checks if the pop() method works properly. */
     @Test
     public void testPop()
     {
@@ -66,6 +68,7 @@ public class testLinkedStack
         assertTrue(state);
     }
     
+    /** Checks to see if the peek() method works properly. */
     @Test
     public void testPeek()
     {
@@ -86,6 +89,7 @@ public class testLinkedStack
         assertEquals("Peek",(Integer)8,stack.peek());
     }
     
+    /** Checks to see if the size() method returns the proper value. */
     @Test
     public void testSize()
     {

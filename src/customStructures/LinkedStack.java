@@ -25,7 +25,10 @@ public class LinkedStack<T> implements IStack<T>
         Node previous;
     }
     
+    /** The node that's considered the "top" of the stack. */
     private Node head;
+    
+    /** The number of elements in the stack. */
     private int size;
     
     /**
