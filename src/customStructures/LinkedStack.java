@@ -21,7 +21,10 @@ public class LinkedStack<T> implements IStack<T>
      */
     private class Node
     {
+        /** The element the Node stores. */
         T element;
+        
+        /** A reference the the previous node. */
         Node previous;
     }
     
